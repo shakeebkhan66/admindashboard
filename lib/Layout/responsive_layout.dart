@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class ResponsiveLayout extends StatelessWidget {
   Widget? tiny;
   Widget? phone;
@@ -22,56 +21,26 @@ class ResponsiveLayout extends StatelessWidget {
   static const int tabletLimit = 800;
   static const int largeTabletLimit = 1100;
 
-
   static bool isTinyHeightLimit(BuildContext context) =>
-      MediaQuery
-          .of(context)
-          .size
-          .height < tinyHeightLimit;
+      MediaQuery.of(context).size.height < tinyHeightLimit;
 
   static bool isTinyLimit(BuildContext context) =>
-      MediaQuery
-          .of(context)
-          .size
-          .width < tinyLimit;
+      MediaQuery.of(context).size.width < tinyLimit;
 
   static bool isPhone(BuildContext context) =>
-      MediaQuery
-          .of(context)
-          .size
-          .width < phoneLimit &&
-          MediaQuery
-              .of(context)
-              .size
-              .width >= tinyLimit;
+      MediaQuery.of(context).size.width < phoneLimit &&
+      MediaQuery.of(context).size.width >= tinyLimit;
 
   static bool isTablet(BuildContext context) =>
-      MediaQuery
-          .of(context)
-          .size
-          .width < tabletLimit &&
-          MediaQuery
-              .of(context)
-              .size
-              .width >= phoneLimit;
-
+      MediaQuery.of(context).size.width < tabletLimit &&
+      MediaQuery.of(context).size.width >= phoneLimit;
 
   static bool isLargeTablet(BuildContext context) =>
-      MediaQuery
-          .of(context)
-          .size
-          .width < largeTabletLimit &&
-          MediaQuery
-              .of(context)
-              .size
-              .width >= tabletLimit;
+      MediaQuery.of(context).size.width < largeTabletLimit &&
+      MediaQuery.of(context).size.width >= tabletLimit;
 
   static bool isComputer(BuildContext context) =>
-      MediaQuery
-          .of(context)
-          .size
-          .width >= largeTabletLimit;
-
+      MediaQuery.of(context).size.width >= largeTabletLimit;
 
   @override
   Widget build(BuildContext context) {
@@ -89,8 +58,7 @@ class ResponsiveLayout extends StatelessWidget {
         }
         if (constraints.maxWidth < largeTabletLimit) {
           return largeTablet!;
-        }
-        else {
+        } else {
           return computer!;
         }
       },
